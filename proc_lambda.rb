@@ -14,11 +14,20 @@ def quotes str
 	puts "<blockquote>" + str + "</blockquote>"
 end
 
-myproc= proc do |only_quotes|
+# myproc= proc do |only_quotes|
+# 	paragraph "i am th paragraph" unless only_quotes
+		
+	
+# 	quotes "this is in quotes"
+# 	end
+
+# form_proc myproc
+
+mylambda= lambda do |only_quotes|
 	paragraph "i am th paragraph" unless only_quotes
 		
 	
 	quotes "this is in quotes"
 	end
 
-form_proc myproc
+form_proc mylambda
