@@ -2,6 +2,8 @@
 
 module Blog
 
+	
+
 class Post
 	attr_reader :author, :title, :post, :comments
 	def initialize options
@@ -16,23 +18,35 @@ class Post
 			@comments << c
 			
 	end
+
+	def print
+		p "the post is from #{@author}";
+		begin
+			@comment.print
+		rescue UserNotFound => details
+			p "error=#{details.message}"
+			raise
+		end
+	end
 end
 
 
 class Comment
 	attr_reader :comment_text, :from
-	def initialize options
-		@comment_text=options[:comment_text]
-		@from=options[:from]
+	def initialize comment_text, from
+		@comment_text=comment_text
+		@from=from
 	end
-end
 
-
+	def print
+		raise UserNotFound if @from.nil?
+		print "the comment is #{comment_text} from #{from}"
+	end
 #p post.inspect
 end
 end
-
-
-
-		
-
+class UserNotFound < StandatdError
+		def initialize
+		end
+	end
+end
