@@ -18,7 +18,11 @@
 #  	puts "the number is #{number}"
 #  end
 list=[1,2,3,4,5,6,7,8,9,10]
-list.each do |number|
+# list.each do |number|
+#  	puts "the number is #{number}"
+#  end
+
+for number in list do
  	puts "the number is #{number}"
  end
 	
