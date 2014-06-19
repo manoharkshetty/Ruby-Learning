@@ -1,3 +1,7 @@
+# encoding: utf-8
+
+module Blog
+
 class Post
 	attr_reader :author, :title, :post, :comments
 	def initialize options
@@ -23,15 +27,11 @@ class Comment
 	end
 end
 
-post=Post.new author:"manohar",
-				title:"my post",
-				post: "post text",
-				comments: []
 
-post.add_comments Comment.new({comment_text:" nice one bro",from:"shreedhar"}),
-				  Comment.new({comment_text:"good one ",from:"ravi"})
-p post.inspect
+#p post.inspect
 end
+end
+
 
 
 		
